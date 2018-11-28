@@ -60,52 +60,52 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <Grid Grid.Column="0" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid Grid.Column="0" Grid.Row="0" Margin="1" Background="#FFFFA7A7">
                                 <Label Content="ДР1.1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="1" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid Grid.Column="1" Grid.Row="0" Margin="1" Background="#FFFFA7A7">
                                 <Label Content="ДР1.2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="2" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid Grid.Column="2" Grid.Row="0" Margin="1" Background="#FFFFA7A7">
                                 <Label Content="ДР2.1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="3" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid Grid.Column="3" Grid.Row="0" Margin="1" Background="#FFFFA7A7">
                                 <Label Content="ДР2.2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="4" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid Grid.Column="4" Grid.Row="0" Margin="1" Background="#FFFFA7A7">
                                 <Label Content="ДР3.1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="5" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid Grid.Column="5" Grid.Row="0" Margin="1" Background="#FFFFA7A7">
                                 <Label Content="ДР3.2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="6" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid Grid.Column="6" Grid.Row="0" Margin="1" Background="#FFFFA7A7">
                                 <Label Content="ДР4.1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="7" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid Grid.Column="7" Grid.Row="0" Margin="1" Background="#FFFFA7A7">
                                 <Label Content="ДР4.2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="8" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid Grid.Column="8" Grid.Row="0" Margin="1" Background="#FFFFA7A7">
                                 <Label Content="ДЗ1.1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="9" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid Grid.Column="9" Grid.Row="0" Margin="1" Background="#FFFFA7A7">
                                 <Label Content="ДЗ1.2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="10" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid Grid.Column="10" Grid.Row="0" Margin="1" Background="#FFFFA7A7">
                                 <Label Content="ДЗ2.1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="11" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid Grid.Column="11" Grid.Row="0" Margin="1" Background="#FFFFA7A7">
                                 <Label Content="ДЗ1.2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="12" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid Grid.Column="12" Grid.Row="0" Margin="1" Background="#FFFFA7A7">
                                 <Label Content="ДД1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="13" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid Grid.Column="13" Grid.Row="0" Margin="1" Background="#FFFFA7A7">
                                 <Label Content="ДД2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="14" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid Grid.Column="14" Grid.Row="0" Margin="1" Background="#FFFFA7A7">
                                 <Label Content="КС1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="15" Grid.Row="0" Background="#FFA7FFDB">
+                            <Grid Grid.Column="15" Grid.Row="0" Margin="1" Background="#FFA7FFDB">
                                 <Label Content="КС2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
                         </Grid>
