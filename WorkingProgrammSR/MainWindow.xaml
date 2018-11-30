@@ -7,36 +7,36 @@
         mc:Ignorable="d"
         Title="Рабочая программа СР" Height="720" Width="1280" Background="White" MinHeight="720" MinWidth="1280">
     <Grid>
-        <DockPanel LastChildFill="True">
+        <DockPanel LastChildFill="True" Grid.ColumnSpan="2">
             <Menu Height="25" VerticalAlignment="Top" DockPanel.Dock="Top">
                 <MenuItem Cursor="" Header="Испытываемое оборудоввание" Height="25">
-                    <RadioButton Content="Механизм раскрытия"/>
-                    <RadioButton Content="Узел раскрытия"/>
-                    <RadioButton Content="Силовая рама"/>
+                    <RadioButton x:Name="RadioButtonDiscoveryMechanism" Content="Механизм раскрытия" Checked="RadioButtonDiagnosticObject_Checked"/>
+                    <RadioButton x:Name="RadioButtonDiscoveryUnit" Content="Узел раскрытия" Checked="RadioButtonDiagnosticObject_Checked" IsChecked="True"/>
+                    <RadioButton x:Name="RadioButtonPowerFrame" Content="Силовая рама" Checked="RadioButtonDiagnosticObject_Checked"/>
                 </MenuItem>
-                <Button Content="Импорт/экспорт углов"/>
+                <Button x:Name="ButtonSettingAngle" Content="Импорт/экспорт углов"/>
             </Menu>
             <DockPanel DockPanel.Dock="Left" LastChildFill="True" Width="756">
                 <Canvas DockPanel.Dock="Top" Height="400" VerticalAlignment="Top">
-                    <ComboBox Canvas.Left="10" Canvas.Top="30.96" Width="180"/>
-                    <ComboBox Canvas.Left="195" Canvas.Top="30.96" Width="180"/>
-                    <ComboBox Canvas.Left="380" Canvas.Top="30.96" Width="180"/>
-                    <ComboBox Canvas.Left="565" Canvas.Top="30.96" Width="180"/>
+                    <ComboBox x:Name="ComboBoxMotorChannel" Canvas.Left="10" Canvas.Top="30.96" Width="180"/>
+                    <ComboBox x:Name="ComboBoxDirection" Canvas.Left="195" Canvas.Top="30.96" Width="180"/>
+                    <ComboBox x:Name="ComboBoxSpeed" Canvas.Left="380" Canvas.Top="30.96" Width="180"/>
+                    <ComboBox x:Name="ComboBoxEncoderChannel" Canvas.Left="565" Canvas.Top="30.96" Width="180"/>
                     <GroupBox Header="Параметры автоматической остановки ДШГ" Height="144.84" Canvas.Left="10" Canvas.Top="57.92" Width="365">
                         <Canvas>
-                            <RadioButton Content="Без остановки" Canvas.Left="10" Canvas.Top="10" Height="23" VerticalContentAlignment="Center"/>
-                            <RadioButton Content="По срабатыванию ДР" Canvas.Left="10" Canvas.Top="38" Height="23" VerticalContentAlignment="Center"/>
-                            <RadioButton Content="По достижению нулевого угла" Canvas.Left="10" Canvas.Top="66" Height="23" VerticalContentAlignment="Center"/>
-                            <RadioButton Content="По количеству шагов" Canvas.Left="10" Canvas.Top="94" Height="23" VerticalContentAlignment="Center"/>
-                            <TextBox Height="23" Canvas.Left="208.817" TextWrapping="Wrap" Canvas.Top="94" Width="134.183" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <RadioButton x:Name="RadioButtonNotStop" Content="Без остановки" Canvas.Left="10" Canvas.Top="10" Height="23" VerticalContentAlignment="Center" IsChecked="True"/>
+                            <RadioButton x:Name="RadioButtonStopDR" Content="По срабатыванию ДР" Canvas.Left="10" Canvas.Top="38" Height="23" VerticalContentAlignment="Center"/>
+                            <RadioButton x:Name="RadioButtonStopAngle" Content="По достижению нулевого угла" Canvas.Left="10" Canvas.Top="66" Height="23" VerticalContentAlignment="Center"/>
+                            <RadioButton x:Name="RadioButtonStopStep" Content="По количеству шагов" Canvas.Left="10" Canvas.Top="94" Height="23" VerticalContentAlignment="Center"/>
+                            <TextBox x:Name="TextBoxStep" Height="23" Canvas.Left="208.817" TextWrapping="Wrap" Canvas.Top="94" Width="134.183" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False"/>
                         </Canvas>
                     </GroupBox>
-                    <Button Content="Стоп" Canvas.Left="380" Canvas.Top="105" Width="180" Height="32"/>
-                    <Button Content="Старт" Canvas.Left="380" Canvas.Top="68" Width="180" Height="32"/>
+                    <Button x:Name="BattonMotorStop" Content="Стоп" Canvas.Left="380" Canvas.Top="105" Width="180" Height="32"/>
+                    <Button x:Name="ButtonMotorStart" Content="Старт" Canvas.Left="380" Canvas.Top="68" Width="180" Height="32"/>
                     <TextBlock Canvas.Left="10" TextWrapping="Wrap" Text="Выбор УР:" Canvas.Top="10"/>
                     <TextBlock Canvas.Left="195" TextWrapping="Wrap" Text="Выбор направления:" Canvas.Top="10"/>
                     <TextBlock Canvas.Left="380" TextWrapping="Wrap" Text="Выбор скорости:" Canvas.Top="10"/>
-                    <TextBlock Canvas.Left="566" TextWrapping="Wrap" Text="Выбор каналов энкодеров:" Canvas.Top="10"/>
+                    <TextBlock Canvas.Left="566" TextWrapping="Wrap" Text="Выбор каналa (энкодер):" Canvas.Top="10"/>
                     <GroupBox Header="Состояние датчиков" Height="56.5" Canvas.Left="10" Canvas.Top="202.76" Width="735">
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -60,52 +60,52 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <Grid Grid.Column="0" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid x:Name="GridDR11" Grid.Column="0" Grid.Row="0" Margin="1" Background="LightPink">
                                 <Label Content="ДР1.1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="1" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid x:Name="GridDR12" Grid.Column="1" Grid.Row="0" Margin="1" Background="LightPink">
                                 <Label Content="ДР1.2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="2" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid x:Name="GridDR21" Grid.Column="2" Grid.Row="0" Margin="1" Background="LightPink">
                                 <Label Content="ДР2.1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="3" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid x:Name="GridDR22" Grid.Column="3" Grid.Row="0" Margin="1" Background="LightPink">
                                 <Label Content="ДР2.2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="4" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid x:Name="GridDR31" Grid.Column="4" Grid.Row="0" Margin="1" Background="LightPink">
                                 <Label Content="ДР3.1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="5" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid x:Name="GridDR32" Grid.Column="5" Grid.Row="0" Margin="1" Background="LightPink">
                                 <Label Content="ДР3.2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="6" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid x:Name="GridDR41" Grid.Column="6" Grid.Row="0" Margin="1" Background="LightPink">
                                 <Label Content="ДР4.1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="7" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid x:Name="GridDR42" Grid.Column="7" Grid.Row="0" Margin="1" Background="LightPink">
                                 <Label Content="ДР4.2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="8" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid x:Name="GridDZ11" Grid.Column="8" Grid.Row="0" Margin="1" Background="LightPink">
                                 <Label Content="ДЗ1.1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="9" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid x:Name="GridDZ12" Grid.Column="9" Grid.Row="0" Margin="1" Background="LightPink">
                                 <Label Content="ДЗ1.2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="10" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid x:Name="GridDZ21" Grid.Column="10" Grid.Row="0" Margin="1" Background="LightPink">
                                 <Label Content="ДЗ2.1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="11" Grid.Row="0" Background="#FFFFA7A7">
-                                <Label Content="ДЗ1.2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <Grid x:Name="GridDZ22" Grid.Column="11" Grid.Row="0" Margin="1" Background="LightPink">
+                                <Label Content="ДЗ2.2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="12" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid x:Name="GridDD1" Grid.Column="12" Grid.Row="0" Margin="1" Background="LightPink">
                                 <Label Content="ДД1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="13" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid x:Name="GridDD2" Grid.Column="13" Grid.Row="0" Margin="1" Background="LightPink">
                                 <Label Content="ДД2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="14" Grid.Row="0" Background="#FFFFA7A7">
+                            <Grid x:Name="GridKS1" Grid.Column="14" Grid.Row="0" Margin="1" Background="LightPink">
                                 <Label Content="КС1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
-                            <Grid Grid.Column="15" Grid.Row="0" Background="#FFA7FFDB">
+                            <Grid x:Name="GridKS2" Grid.Column="15" Grid.Row="0" Margin="1" Background="Aquamarine">
                                 <Label Content="КС2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                             </Grid>
                         </Grid>
@@ -125,7 +125,7 @@
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
-                            <Label Grid.Column="0" Grid.Row="0" Content="Основной канал" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                            <Label x:Name="LabelEncoderChannel" Grid.Column="0" Grid.Row="0" Content="Основной канал" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
                             <Label Grid.Column="0" Grid.Row="1" Content="Абс. угол" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                             <Label Grid.Column="0" Grid.Row="2" Content="Δ угола" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                             <Label Grid.Column="0" Grid.Row="3" Content="Нулевой угол" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
@@ -133,18 +133,18 @@
                             <Label Grid.Column="2" Grid.Row="0" Content="УР2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                             <Label Grid.Column="3" Grid.Row="0" Content="УР3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                             <Label Grid.Column="4" Grid.Row="0" Content="УР4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                            <TextBox Grid.Column="1" Grid.Row="1" Text="TEST" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                            <TextBox Grid.Column="2" Grid.Row="1" Text="TEST" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                            <TextBox Grid.Column="3" Grid.Row="1" Text="TEST" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                            <TextBox Grid.Column="4" Grid.Row="1" Text="TEST" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                            <TextBox Grid.Column="1" Grid.Row="2" Text="TEST" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                            <TextBox Grid.Column="2" Grid.Row="2" Text="TEST" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                            <TextBox Grid.Column="3" Grid.Row="2" Text="TEST" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                            <TextBox Grid.Column="4" Grid.Row="2" Text="TEST" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                            <TextBox Grid.Column="1" Grid.Row="3" Text="TEST" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                            <TextBox Grid.Column="2" Grid.Row="3" Text="TEST" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                            <TextBox Grid.Column="3" Grid.Row="3" Text="TEST" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                            <TextBox Grid.Column="4" Grid.Row="3" Text="TEST" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <TextBox x:Name="TextBoxMainAngle1" Grid.Column="1" Grid.Row="1" Text="TEST" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <TextBox x:Name="TextBoxMainAngle2" Grid.Column="2" Grid.Row="1" Text="TEST" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <TextBox x:Name="TextBoxMainAngle3" Grid.Column="3" Grid.Row="1" Text="TEST" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <TextBox x:Name="TextBoxMainAngle4" Grid.Column="4" Grid.Row="1" Text="TEST" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <TextBox x:Name="TextBoxDeltaAngle1" Grid.Column="1" Grid.Row="2" Text="TEST" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <TextBox x:Name="TextBoxDeltaAngle2" Grid.Column="2" Grid.Row="2" Text="TEST" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <TextBox x:Name="TextBoxDeltaAngle3" Grid.Column="3" Grid.Row="2" Text="TEST" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <TextBox x:Name="TextBoxDeltaAngle4" Grid.Column="4" Grid.Row="2" Text="TEST" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <TextBox x:Name="TextBoxNullAngle1" Grid.Column="1" Grid.Row="3" Text="TEST" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <TextBox x:Name="TextBoxNullAngle2" Grid.Column="2" Grid.Row="3" Text="TEST" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <TextBox x:Name="TextBoxNullAngle3" Grid.Column="3" Grid.Row="3" Text="TEST" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            <TextBox x:Name="TextBoxNullAngle4" Grid.Column="4" Grid.Row="3" Text="TEST" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                         </Grid>
                     </GroupBox>
                 </Canvas>
@@ -173,28 +173,28 @@
                         <Label Grid.Column="1" Grid.Row="0" Content="Напряжение" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                         <Label Grid.Column="2" Grid.Row="0" Content="Ток" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                         <Label Grid.Column="3" Grid.Row="0" Content="Установка напряжения" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-                        <TextBox Grid.Column="1" Grid.Row="1" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Margin="1"/>
-                        <TextBox Grid.Column="1" Grid.Row="2" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Margin="1"/>
-                        <TextBox Grid.Column="1" Grid.Row="3" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Margin="1"/>
-                        <TextBox Grid.Column="1" Grid.Row="4" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Margin="1"/>
-                        <TextBox Grid.Column="1" Grid.Row="5" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Margin="1"/>
-                        <TextBox Grid.Column="1" Grid.Row="6" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Margin="1"/>
-                        <TextBox Grid.Column="2" Grid.Row="1" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Margin="1"/>
-                        <TextBox Grid.Column="2" Grid.Row="2" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Margin="1"/>
-                        <TextBox Grid.Column="2" Grid.Row="3" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Margin="1"/>
-                        <TextBox Grid.Column="2" Grid.Row="4" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Margin="1"/>
-                        <TextBox Grid.Column="2" Grid.Row="5" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Margin="1"/>
-                        <TextBox Grid.Column="2" Grid.Row="6" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Margin="1"/>
-                        <TextBox Grid.Column="3" Grid.Row="1" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="1"/>
-                        <Button Grid.Column="4" Grid.Row="1" Content="Установить" Margin="1"/>
-                        <TextBox Grid.Column="3" Grid.Row="3" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="1"/>
-                        <Button Grid.Column="4" Grid.Row="3" Content="Установить" Margin="1"/>
+                        <TextBox x:Name="TextBoxSetVoltage1" Grid.Column="1" Grid.Row="1" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Margin="1"/>
+                        <TextBox x:Name="TextBoxActualVoltage1" Grid.Column="1" Grid.Row="2" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Margin="1"/>
+                        <TextBox x:Name="TextBoxSetVoltage2" Grid.Column="1" Grid.Row="3" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Margin="1"/>
+                        <TextBox x:Name="TextBoxActualVoltage2" Grid.Column="1" Grid.Row="4" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Margin="1"/>
+                        <TextBox x:Name="TextBoxSetVoltage3" Grid.Column="1" Grid.Row="5" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Margin="1"/>
+                        <TextBox x:Name="TextBoxActualVoltage3" Grid.Column="1" Grid.Row="6" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Margin="1"/>
+                        <TextBox x:Name="TextBoxSetCurrent1" Grid.Column="2" Grid.Row="1" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Margin="1"/>
+                        <TextBox x:Name="TextBoxActualCurrent1" Grid.Column="2" Grid.Row="2" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Margin="1"/>
+                        <TextBox x:Name="TextBoxSetCurrent2" Grid.Column="2" Grid.Row="3" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Margin="1"/>
+                        <TextBox x:Name="TextBoxActualCurrent2" Grid.Column="2" Grid.Row="4" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Margin="1"/>
+                        <TextBox x:Name="TextBoxSetCurrent3" Grid.Column="2" Grid.Row="5" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Margin="1"/>
+                        <TextBox x:Name="TextBoxActualCurrent3" Grid.Column="2" Grid.Row="6" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True" Margin="1"/>
+                        <TextBox x:Name="TextBoxGetVoltage1" Grid.Column="3" Grid.Row="1" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="1"/>
+                        <Button x:Name="ButtonGetVoltage1" Grid.Column="4" Grid.Row="1" Content="Установить" Margin="1"/>
+                        <TextBox x:Name="TextBoxGetVoltage2" Grid.Column="3" Grid.Row="3" Text="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="1"/>
+                        <Button x:Name="ButtonGetVoltage2" Grid.Column="4" Grid.Row="3" Content="Установить" Margin="1"/>
 
                     </Grid>
                 </GroupBox>
             </DockPanel>
             <GroupBox Header="Протокол" DockPanel.Dock="Right">
-                <TextBox TextWrapping="Wrap" IsReadOnly="True" Text="TextBox"/>
+                <TextBlock x:Name="TextBlockProtocol" TextWrapping="Wrap"/>
             </GroupBox>
         </DockPanel>
     </Grid>

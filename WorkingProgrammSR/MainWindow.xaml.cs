@@ -20,9 +20,35 @@ namespace WorkingProgrammSR
     /// </summary>
     public partial class MainWindow : Window
     {
+        SolidColorBrush On = new SolidColorBrush(Colors.Aquamarine);
+        SolidColorBrush Off = new SolidColorBrush(Colors.LightPink);
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void RadioButtonDiagnosticObject_Checked(object sender, RoutedEventArgs e)
+        {
+            if (RadioButtonDiscoveryMechanism.IsChecked == true)
+            {
+                //RadioButtonNotStop.IsChecked = true;
+                //RadioButtonStopDR.IsEnabled = false;
+                //RadioButtonStopAngle.IsEnabled = false;
+                //RadioButtonStopStep.IsEnabled = false;
+            }
+            if (RadioButtonDiscoveryUnit.IsChecked == true)
+            {
+                //RadioButtonStopDR.IsEnabled = true;
+                //RadioButtonStopAngle.IsEnabled = true;
+                //RadioButtonStopStep.IsEnabled = true;
+            }
+            if (RadioButtonPowerFrame.IsChecked == true)
+            {
+                //RadioButtonStopDR.IsEnabled = true;
+                //RadioButtonStopAngle.IsEnabled = true;
+                //RadioButtonStopStep.IsEnabled = true;
+            }
         }
     }
 }
